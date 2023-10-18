@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace EightyNine\ExcelImportAction\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ExcelImportActionCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filament-excel-import';
 
     public $description = 'My command';
 

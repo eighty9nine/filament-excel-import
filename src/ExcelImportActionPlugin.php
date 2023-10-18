@@ -1,15 +1,15 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace EightyNine\ExcelImportAction;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
-class SkeletonPlugin implements Plugin
+class ExcelImportActionPlugin implements Plugin
 {
     public function getId(): string
     {
-        return 'skeleton';
+        return 'filament-excel-import';
     }
 
     public function register(Panel $panel): void
