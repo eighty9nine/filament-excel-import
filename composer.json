@@ -40,13 +40,13 @@
     },
     "autoload": {
         "psr-4": {
-            "EightyNine\\ExcelImportAction\\": "src/",
-            "EightyNine\\ExcelImportAction\\Database\\Factories\\": "database/factories/"
+            "EightyNine\\ExcelImport\\": "src/",
+            "EightyNine\\ExcelImport\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "EightyNine\\ExcelImportAction\\Tests\\": "tests/"
+            "EightyNine\\ExcelImport\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -66,10 +66,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "EightyNine\\ExcelImportAction\\ExcelImportActionServiceProvider"
+                "EightyNine\\ExcelImport\\ExcelImportServiceProvider"
             ],
             "aliases": {
-                "ExcelImportAction": "EightyNine\\ExcelImportAction\\Facades\\ExcelImportAction"
+                "ExcelImportAction": "EightyNine\\ExcelImport\\Facades\\ExcelImportAction"
             }
         }
     },

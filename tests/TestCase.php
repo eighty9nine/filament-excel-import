@@ -4,6 +4,7 @@ namespace EightyNine\ExcelImportAction\Tests;
 
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
+use EightyNine\ExcelImport\ExcelImportServiceProvider;
 use Filament\Actions\ActionsServiceProvider;
 use Filament\FilamentServiceProvider;
 use Filament\Forms\FormsServiceProvider;
@@ -18,8 +19,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
-use EightyNine\ExcelImportAction\ExcelImportActionServiceProvider;
-
 class TestCase extends Orchestra
 {
     protected function setUp(): void
@@ -48,7 +47,7 @@ class TestCase extends Orchestra
             SupportServiceProvider::class,
             TablesServiceProvider::class,
             WidgetsServiceProvider::class,
-            ExcelImportActionServiceProvider::class,
+            ExcelImportServiceProvider::class,
         ];
     }
 

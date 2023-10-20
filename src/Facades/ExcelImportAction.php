@@ -1,6 +1,6 @@
 <?php
 
-namespace EightyNine\ExcelImportAction\Facades;
+namespace EightyNine\ExcelImport\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

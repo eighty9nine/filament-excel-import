@@ -1,6 +1,6 @@
 <?php
 
-namespace EightyNine\ExcelImportAction\Commands;
+namespace EightyNine\ExcelImport\Commands;
 
 use Illuminate\Console\Command;
 

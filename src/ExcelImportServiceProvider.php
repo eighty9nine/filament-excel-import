@@ -1,7 +1,9 @@
 <?php
 
-namespace EightyNine\ExcelImportAction;
+namespace EightyNine\ExcelImport;
 
+use EightyNine\ExcelImport\Commands\ExcelImportActionCommand;
+use EightyNine\ExcelImport\Testing\TestsExcelImportAction;
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
@@ -13,10 +15,8 @@ use Livewire\Features\SupportTesting\Testable;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use EightyNine\ExcelImportAction\Commands\ExcelImportActionCommand;
-use EightyNine\ExcelImportAction\Testing\TestsExcelImportAction;
 
-class ExcelImportActionServiceProvider extends PackageServiceProvider
+class ExcelImportServiceProvider extends PackageServiceProvider
 {
     public static string $name = 'filament-excel-import';
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace EightyNine\ExcelImportAction;
+namespace EightyNine\ExcelImport;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
-class ExcelImportActionPlugin implements Plugin
+class ExcelImportPlugin implements Plugin
 {
     public function getId(): string
     {

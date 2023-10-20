@@ -1,6 +1,6 @@
 <?php
 
-namespace EightyNine\ExcelImportAction\Testing;
+namespace EightyNine\ExcelImport\Testing;
 
 use Livewire\Features\SupportTesting\Testable;
 
