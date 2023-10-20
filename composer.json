@@ -1,6 +1,6 @@
 {
     "name": "eightynine/filament-excel-import",
-    "description": "This is my package filament-excel-import",
+    "description": "Import Excel files with Laravel Filament.",
     "keywords": [
         "eightynine",
         "laravel",
