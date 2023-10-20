@@ -16,6 +16,7 @@ class DefaultImport implements ToCollection, WithHeadingRow
 
     public function collection(Collection $collection)
     {
+        dd($collection);
         foreach ($collection as $row) {
             $this->model::create($row->toArray());
         }

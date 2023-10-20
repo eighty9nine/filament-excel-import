@@ -50,6 +50,7 @@ class ExcelImportAction extends Action
             FileUpload::make('upload')
                 ->label(fn ($livewire) => str($livewire->getTable()->getPluralModelLabel())->title() . ' ' . __('Excel Data'))
                 ->default(1)
+                ->disk($this->getDisk())
                 ->columns()
                 ->required(),
         ];
@@ -84,7 +85,6 @@ class ExcelImportAction extends Action
     {
         return function (array $data, $livewire): bool {
             $importObject = new $this->importClass($livewire->getModel(), ...$this->importClassAttributes);
-            // dd($importObject, $data);
             Excel::import($importObject, $data['upload']);
 
             return true;
