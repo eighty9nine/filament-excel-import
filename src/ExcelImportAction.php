@@ -5,30 +5,32 @@ namespace EightyNine\ExcelImport;
 use Closure;
 use Filament\Actions\Action;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\TextInput;
 use Maatwebsite\Excel\Facades\Excel;
 
 class ExcelImportAction extends Action
 {
     protected string $importClass = DefaultImport::class;
+
     protected array $importClassAttributes = [];
+
     protected ?string $disk = null;
 
-    public function class(?string $class = null, ...$attributes): static
+    public function class(string $class = null, ...$attributes): static
     {
         $this->importClass = $class ?: DefaultImport::class;
         $this->importClassAttributes = $attributes;
+
         return $this;
     }
 
-    public function disk(?string $disk = null)
+    public function disk(string $disk = null)
     {
         $this->disk = $disk;
     }
 
     protected function getDisk()
     {
-        return $this->disk ?: config("filesystems.default");
+        return $this->disk ?: config('filesystems.default');
     }
 
     public static function getDefaultName(): ?string
@@ -87,7 +89,7 @@ class ExcelImportAction extends Action
     /**
      * Import data function.
      *
-     * @param array $data The data to import.
+     * @param  array  $data The data to import.
      * @param $livewire The Livewire instance.
      * @return bool Returns true if the import was successful, false otherwise.
      */
@@ -96,7 +98,8 @@ class ExcelImportAction extends Action
         return function (array $data, $livewire): bool {
             $importObject = new $this->importClass($livewire->getModel(), ...$this->importClassAttributes);
             // dd($importObject, $data);
-            Excel::import($importObject, $data["upload"]);
+            Excel::import($importObject, $data['upload']);
+
             return true;
         };
     }
