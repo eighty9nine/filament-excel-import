@@ -15,17 +15,12 @@ class ExcelImportAction extends Action
 
     protected ?string $disk = null;
 
-    public function class(string $class = null, ...$attributes): static
+    public function use(string $class = null, ...$attributes): static
     {
         $this->importClass = $class ?: DefaultImport::class;
         $this->importClassAttributes = $attributes;
 
         return $this;
-    }
-
-    public function disk(string $disk = null)
-    {
-        $this->disk = $disk;
     }
 
     protected function getDisk()
@@ -49,20 +44,12 @@ class ExcelImportAction extends Action
         return $this;
     }
 
-    public function form(array | Closure | null $form): static
-    {
-        $this->form = $this->getDefaultForm();
-
-        return $this;
-    }
-
     protected function getDefaultForm(): array
     {
         return [
             FileUpload::make('upload')
                 ->label(fn ($livewire) => str($livewire->getTable()->getPluralModelLabel())->title() . ' ' . __('Excel Data'))
                 ->default(1)
-                ->disk($this->getDisk())
                 ->columns()
                 ->required(),
         ];
