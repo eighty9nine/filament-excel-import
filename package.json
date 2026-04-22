@@ -22,5 +22,6 @@
         "prettier": "^2.7.1",
         "prettier-plugin-tailwindcss": "^0.1.13",
         "tailwindcss": "^3.3.3"
-    }
+    },
+    "packageManager": "pnpm@10.29.1+sha512.48dae233635a645768a3028d19545cacc1688639eeb1f3734e42d6d6b971afbf22aa1ac9af52a173d9c3a20c15857cfa400f19994d79a2f626fcc73fccda9bbc"
 }

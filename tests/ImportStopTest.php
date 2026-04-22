@@ -13,7 +13,7 @@ it('can stop import with error message', function () {
     };
 
     $collection = collect([
-        ['name' => 'John', 'email' => 'john@example.com'],
+        collect(['name' => 'John', 'email' => 'john@example.com']),
     ]);
 
     expect(fn() => $import->collection($collection))
@@ -29,7 +29,7 @@ it('can validate headers and stop import', function () {
     };
 
     $collection = collect([
-        ['name' => 'John', 'email' => 'john@example.com'], // missing 'phone'
+        collect(['name' => 'John', 'email' => 'john@example.com']), // missing 'phone'
     ]);
 
     expect(fn() => $import->collection($collection))
