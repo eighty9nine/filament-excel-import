@@ -5,7 +5,7 @@ namespace EightyNine\ExcelImport\Tables;
 use Closure;
 use EightyNine\ExcelImport\Concerns\HasExcelImportAction;
 use EightyNine\ExcelImport\DefaultRelationshipImport;
-use Filament\Tables\Actions\Action;
+use Filament\Actions\Action;
 use Maatwebsite\Excel\Facades\Excel;
 
 class ExcelImportRelationshipAction extends Action
