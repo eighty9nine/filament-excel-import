@@ -1,5 +1,5 @@
 <?php
 
-use EightyNine\ExcelImportAction\Tests\TestCase;
+use EightyNine\ExcelImport\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
