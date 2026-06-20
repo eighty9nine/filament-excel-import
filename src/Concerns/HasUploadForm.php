@@ -130,7 +130,7 @@ trait HasUploadForm
 
                 return str($livewire->getTable()->getPluralModelLabel())->title() . ' ' . __('excel-import::excel-import.excel_data');
             })
-            ->default(1)
+         //   ->default(1)
             ->storeFiles($this->storeFiles)
             ->disk(fn () => $this->disk ?: (config('excel-import.upload_disk') ?:
                 config('filesystems.default')))

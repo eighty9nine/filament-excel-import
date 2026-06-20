@@ -4,6 +4,7 @@ namespace EightyNine\ExcelImport;
 
 use Closure;
 use EightyNine\ExcelImport\Exceptions\ImportStoppedException;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
@@ -91,7 +92,7 @@ class EnhancedDefaultImport implements ToCollection, WithHeadingRow
 
         $actualHeaders = array_keys($firstRow->toArray());
         $missingHeaders = array_diff($expectedHeaders, $actualHeaders);
-        
+
         if (!empty($missingHeaders)) {
             $this->stopImportWithError(
                 __('excel-import::excel-import.missing_headers_error', [
@@ -137,14 +138,14 @@ class EnhancedDefaultImport implements ToCollection, WithHeadingRow
                         $data
                     );
                 }
-                
+
                 // Allow custom validation before creating each record
                 $this->beforeCreateRecord($data, $row);
-                
-                $this->model::create($data);
-                
+
+                $record = $this->model::create($data);
+
                 // Allow custom actions after creating each record
-                $this->afterCreateRecord($data, $row);
+                $this->afterCreateRecord($data, $row, $record);
             }
         }
 
@@ -176,7 +177,7 @@ class EnhancedDefaultImport implements ToCollection, WithHeadingRow
      * Override this method in your custom import class to perform actions
      * after creating each record
      */
-    protected function afterCreateRecord(array $data, $row): void
+    protected function afterCreateRecord(array $data, $row, Model $record): void
     {
         // Override in custom import classes
     }
